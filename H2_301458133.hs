@@ -19,3 +19,4 @@ myFilter p xs = foldl func [] xs
         func i x = if p x then i ++ [x] else i
 
 sumsqeven :: [Int] -> Int
+sumsqeven = sum . filter (even) . map (^2)
