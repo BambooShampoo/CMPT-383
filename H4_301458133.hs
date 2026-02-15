@@ -11,7 +11,7 @@ instance Applicative (ErrJst e) where
   Jst f <*> Jst x = Jst (f x)
 
 instance Monad (ErrJst e) where
-  return = Jst
+  return = pure
   Err e >>= _ = Err e
   Jst x >>= f = f x
 
